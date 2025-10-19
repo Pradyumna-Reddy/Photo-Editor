@@ -1,5 +1,7 @@
 from PIL import Image
 from .filters import brightness
+from engine.filters.sunny import sunny_filter
+from engine.filters.vintage import vinatage_filter
 
 
 class ImageProcessor:
@@ -13,6 +15,8 @@ class ImageProcessor:
 
         self.filters = {
             'brightness': brightness.apply,
+            'sunny_filter': sunny_filter,
+            'vinatage_filter': vinatage_filter,
         }
 
     def apply(self, filter_name, **kwargs):
